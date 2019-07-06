@@ -17,7 +17,7 @@ $make && make install
    tmock_start(array $array) : bool
 ```
 
-#### example:
+##### example:
 ```php
 <?php
     tmock_start(['test' => function (){return 2;}]);
@@ -26,7 +26,7 @@ $make && make install
     }
     var_dump(test());
 ```
-#### output:
+##### output:
 ```
 int(2)
 ```
@@ -36,13 +36,13 @@ int(2)
    tmock_get() : array
 ```
 
-#### example:
+##### example:
 ```php
 <?php
     tmock_start(['test' => function (){return 2;}]);
     var_dump(tmock_get());
 ```
-#### output:
+##### output:
 ```
 array(1) {
   ["test"]=>
@@ -56,7 +56,7 @@ array(1) {
    tmock_end() : bool
 ```
 
-#### example:
+##### example:
 ```php
 <?php
 tmock_start(['test' => function (){return 2;}]);
@@ -67,7 +67,7 @@ var_dump(test());
 tmock_end();
 var_dump(test());
 ```
-#### output:
+##### output:
 ```
 int(2)
 int(3)
@@ -78,7 +78,7 @@ int(3)
    tmock_debug_start() : bool
 ```
 
-#### example:
+##### example:
 ```php
 <?php
 tmock_debug_start();
@@ -88,7 +88,7 @@ function test(){
 }
 var_dump(test());
 ```
-#### output:
+##### output:
 ```
 fname test, type 2
 fname test match
@@ -104,7 +104,7 @@ int(2)
    tmock_debug_end() : bool
 ```
 
-#### example:
+##### example:
 ```php
 <?php
 tmock_debug_start();
@@ -116,7 +116,7 @@ var_dump(test());
 tmock_debug_end();
 var_dump(test());
 ```
-#### output:
+##### output:
 ```
 fname test, type 2
 fname test match
@@ -144,7 +144,7 @@ var_dump(test1());
 var_dump(tmock_end());
 var_dump(test1());
 ```
-#### output:
+##### output:
 ```
 bool(true)
 int(1)
@@ -161,7 +161,7 @@ var_dump(explode(',','1,2'));
 var_dump(tmock_end());
 var_dump(explode(',','1,2'));
 ```
-#### output:
+##### output:
 ```
 bool(true)
 int(2)
@@ -188,7 +188,7 @@ var_dump((new obj1)->test1());
 var_dump(tmock_end());
 var_dump((new obj1)->test1());
 ```
-#### output:
+##### output:
 ```
 bool(true)
 int(2)
@@ -210,7 +210,7 @@ var_dump(obj2::test1());
 var_dump(tmock_end());
 var_dump(obj2::test1());
 ```
-#### output:
+##### output:
 ```
 bool(true)
 int(2)
@@ -231,7 +231,7 @@ var_dump(test1());
 var_dump(tmock_end());
 var_dump(test1());
 ```
-#### output:
+##### output:
 ```
 bool(true)
 int(1)
