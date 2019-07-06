@@ -1,5 +1,8 @@
 # tmock
 
+一个类似 jmock Expectations 实现可以mock任何函数、对象方法的php扩展，可以与phpunit、xdebug配合使用。
+
+
 ## Requirement
 - PHP 7.0 +
 
