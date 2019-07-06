@@ -59,13 +59,13 @@ array(1) {
 ##### example:
 ```php
 <?php
-tmock_start(['test' => function (){return 2;}]);
-function test(){
-    return 3;
-}
-var_dump(test());
-tmock_end();
-var_dump(test());
+    tmock_start(['test' => function (){return 2;}]);
+    function test(){
+        return 3;
+    }
+    var_dump(test());
+    tmock_end();
+    var_dump(test());
 ```
 ##### output:
 ```
@@ -81,12 +81,12 @@ int(3)
 ##### example:
 ```php
 <?php
-tmock_debug_start();
-tmock_start(['test' => function (){return 2;}]);
-function test(){
-    return 3;
-}
-var_dump(test());
+    tmock_debug_start();
+    tmock_start(['test' => function (){return 2;}]);
+    function test(){
+        return 3;
+    }
+    var_dump(test());
 ```
 ##### output:
 ```
@@ -107,14 +107,14 @@ int(2)
 ##### example:
 ```php
 <?php
-tmock_debug_start();
-tmock_start(['test' => function (){return 2;}]);
-function test(){
-    return 3;
-}
-var_dump(test());
-tmock_debug_end();
-var_dump(test());
+    tmock_debug_start();
+    tmock_start(['test' => function (){return 2;}]);
+    function test(){
+        return 3;
+    }
+    var_dump(test());
+    tmock_debug_end();
+    var_dump(test());
 ```
 ##### output:
 ```
@@ -136,13 +136,13 @@ int(2)
 
 ```php
 <?php
-var_dump(tmock_start(['MyProject\test1'=>function (){return 1;}]));
-function test1(){
-    return 2;
-}
-var_dump(test1());
-var_dump(tmock_end());
-var_dump(test1());
+    var_dump(tmock_start(['MyProject\test1'=>function (){return 1;}]));
+    function test1(){
+        return 2;
+    }
+    var_dump(test1());
+    var_dump(tmock_end());
+    var_dump(test1());
 ```
 ##### output:
 ```
@@ -156,10 +156,10 @@ int(2)
 
 ```php
 <?php
-var_dump(tmock_start(['explode'=>function (){return 2;}]));
-var_dump(explode(',','1,2'));
-var_dump(tmock_end());
-var_dump(explode(',','1,2'));
+    var_dump(tmock_start(['explode'=>function (){return 2;}]));
+    var_dump(explode(',','1,2'));
+    var_dump(tmock_end());
+    var_dump(explode(',','1,2'));
 ```
 ##### output:
 ```
@@ -178,15 +178,15 @@ array(2) {
 
 ```php
 <?php
-var_dump(tmock_start(['obj1->test1'=>function (){return 2;}]));
-class obj1 {
-    function test1() {
-        return 3;
+    var_dump(tmock_start(['obj1->test1'=>function (){return 2;}]));
+    class obj1 {
+        function test1() {
+            return 3;
+        }
     }
-}
-var_dump((new obj1)->test1());
-var_dump(tmock_end());
-var_dump((new obj1)->test1());
+    var_dump((new obj1)->test1());
+    var_dump(tmock_end());
+    var_dump((new obj1)->test1());
 ```
 ##### output:
 ```
@@ -200,15 +200,15 @@ int(3)
 
 ```php
 <?php
-var_dump(tmock_start(['obj2::test1'=>function (){return 2;}]));
-class obj2 {
-    static function test1() {
-        return 3;
+    var_dump(tmock_start(['obj2::test1'=>function (){return 2;}]));
+    class obj2 {
+        static function test1() {
+            return 3;
+        }
     }
-}
-var_dump(obj2::test1());
-var_dump(tmock_end());
-var_dump(obj2::test1());
+    var_dump(obj2::test1());
+    var_dump(tmock_end());
+    var_dump(obj2::test1());
 ```
 ##### output:
 ```
@@ -222,14 +222,14 @@ int(3)
 
 ```php
 <?php
-namespace MyProject;
-var_dump(tmock_start(['MyProject\test1'=>function (){return 1;}]));
-function test1(){
-    return 2;
-}
-var_dump(test1());
-var_dump(tmock_end());
-var_dump(test1());
+    namespace MyProject;
+    var_dump(tmock_start(['MyProject\test1'=>function (){return 1;}]));
+    function test1(){
+        return 2;
+    }
+    var_dump(test1());
+    var_dump(tmock_end());
+    var_dump(test1());
 ```
 ##### output:
 ```
