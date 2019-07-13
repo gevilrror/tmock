@@ -244,6 +244,47 @@ int(2)
 ```
 
 
+## Args
+
+```php
+tmock_start(['testClass->testMethod' => function ($fname, $args, $obj){
+	var_dump($fname, $args, $obj);
+	$args[0] = 3;
+	return 2;
+}]);
+
+class testClass
+{
+	var $a1 = 5;
+
+	function testMethod(&$p1, $p2)
+	{
+		return 1;
+	}
+}
+
+var_dump((new testClass)->testMethod($a, $b));
+var_dump($a);
+```
+##### output:
+```
+string(21) "testClass->testMethod"
+array(2) {
+  [0]=>
+  &NULL
+  [1]=>
+  NULL
+}
+object(testClass)#2 (1) {
+  ["a1"]=>
+  int(5)
+}
+int(2)
+int(3)
+```
+
+
+
 
 
 
